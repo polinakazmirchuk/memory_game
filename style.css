@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.field {
+    padding: 10px;
+    width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.card {
+    width: 110px;
+    height: 150px;
+    border-radius: 20px;
+}
+
+.db {
+    position: absolute;
+    z-index: 2;
+    position: center;
+    width: 200px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    font-family: Philosopher, Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 1.25rem;
+    border-radius: 40px;
+
+}
+
+.blur {
+    position: absolute;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    height: 100%;
+    width: 100%;
+}
+
+.button {
+    width: 100px;
+    height: 30px;
+    font-size: 0.7em;
+    border-radius: 10px;
+    border: none;
+    font-family: inherit;
+    background: #8EAECE;
+}
+
+.pers {
+    color: #26386D;
+    font-weight: bold;
+
+}
+
+.timer {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 180px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 25px;
+    font-family: Philosopher, Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.time {
+    padding: 10px;
+    border-radius: 12px;
+    border: #8EAECE solid 2px;
+}
+
+.turnOn {
+    font-family: inherit;
+    font-size: 1.1rem;
+    height: 40px;
+    width: 160px;
+    border-radius: 12px;
+    border: white solid 1px;
+    background-color: #8EAECE;
+    color: inherit;
+    box-shadow: 4px 4px 4px #49495a,
+        -4px -4px 4px #777794;
+
+}
+
+.reload {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-family: Philosopher, Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    height: 40px;
+    width: 160px;
+    border-radius: 12px;
+    border: white solid 1px;
+    background-color: #8EAECE;
+    color: white;
+    box-shadow: 4px 4px 4px #49495a,
+        -4px -4px 4px #777794;
+}
