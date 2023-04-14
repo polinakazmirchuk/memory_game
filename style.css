@@ -123,3 +123,13 @@ body {
     box-shadow: 4px 4px 4px #49495a,
         -4px -4px 4px #777794;
 }
+
+.reload:active {
+    width: 155px;
+    height: 35px;
+}
+
+.turnOn:active {
+    width: 155px;
+    height: 35px;
+}
