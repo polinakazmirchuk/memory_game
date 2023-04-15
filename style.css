@@ -133,3 +133,22 @@ body {
     width: 155px;
     height: 35px;
 }
+
+.winning {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    font-family: Philosopher, Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 1.25rem;
+    border-radius: 40px;
+    background: white;
+
+    color: #26386D;
+}

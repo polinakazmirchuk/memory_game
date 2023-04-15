@@ -1,3 +1,9 @@
+
+let sound = new Audio()
+sound.src = "./music/ivan_franko.mp3"
+sound.volume = 0.1
+sound.play()
+
 document.querySelector("body").style.background = "rgb(96, 96, 119)"
 //create an array with people and their photos
 
@@ -99,21 +105,27 @@ let minTwo = document.querySelector(".number2")
 let minOne = document.querySelector(".number1")
 
 function timerSecFour() {
+
     secFour.innerText++
+    secFour.innerText = secFour.innerText
 }
 function timerSecThree() {
     secThree.innerText++
+    secThree.innerText = secThree.innerText
     secFour.innerText = 0
+
 }
 
 function timerMinOne() {
     minOne.innerText++
+    minOne.innerText = minOne.innerText
     minTwo.innerText = 0
     secFour.innerText = 0
     secThree.innerText = 0
 }
 function timerMinTwo() {
     minTwo.innerText++
+    minTwo.innerText = minTwo.innerText
     secFour.innerText = 0
     secThree.innerText = 0
 }
@@ -121,19 +133,40 @@ function timerMinTwo() {
 
 
 function repetition() {
+
     setInterval(timerSecFour, 1000)
     setInterval(timerSecThree, 10000)
 
     setInterval(timerMinTwo, 60000)
     setInterval(timerMinOne, 600000)
+
+}
+let secFourId = setInterval(timerSecFour, 1000)
+let secThreeId = setInterval(timerSecThree, 10000)
+
+let minTwoId = setInterval(timerMinTwo, 60000)
+let minOneId = setInterval(timerMinOne, 600000)
+
+function stop() {
+
+    clearInterval(secFourId)
+    clearInterval(secThreeId)
+    clearInterval(minTwoId)
+    clearInterval(minOneId)
 }
 
+
+// you won
+
+let winning = document.createElement("p")
+winning.classList.add("winning")
+winning.innerText = "Вітаю! Ви перемогли. Сподіваюсь ви дізнались більше про українських діячів:)"
 
 function reload() {
     window.location.reload()
 }
 
-document.querySelector(".turnOn").addEventListener("click", repetition)
+
 document.querySelector(".reload").addEventListener("click", reload)
 
 
@@ -173,7 +206,9 @@ function create() {
 
 }
 let chosens = []
+let counter = 0
 function chosen() {
+
     if (chosens.length < 2 && chosens[0] != this.id) {
         this.style.backgroundImage = `url(${people[this.id]["picture"]})` // put picture to the chosen card
         chosens.push(this.id) // push the id of an card to the new array
@@ -193,6 +228,12 @@ function check() {
 
         dovidka.innerText = people[chosens[0]].information
         pers.innerText = people[chosens[0]].name
+        if (counter == 11) {
+            stop()
+            document.querySelector(".blurBlock").classList.add("blur")
+            document.querySelector("body").appendChild(winning)
+        }
+
 
         document.querySelector(".blurBlock").classList.add("blur")
         document.querySelector("body").appendChild(db)
@@ -222,6 +263,7 @@ function del() {
     db.remove()
     document.querySelector(".blurBlock").classList.remove("blur")
     pers.remove()
+    counter++
 }
 
 
